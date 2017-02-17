@@ -1,4 +1,4 @@
-# ats
+# MyHeat Prototype
 
 > A Vue.js project
 
