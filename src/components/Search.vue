@@ -1,6 +1,6 @@
 <template>
 <md-layout class="app-search">
-    <input type="text" class="app-searchbox" @input="onInput" @keyup.esc="isOpen = false" v-model="keyword" />
+    <input type="text" class="app-searchbox" @input="onInput" @keyup.esc="isOpen = false" v-model="keyword" placeholder="Seach for an address..." />
     <md-list v-show="isOpen" class="autocomplete-list">
         <md-list-item class="autocomplete-list-item" v-if="hasResults === true" v-for="(item, index) in filteredItems" @click="select(index)">
             <md-icon>place</md-icon>

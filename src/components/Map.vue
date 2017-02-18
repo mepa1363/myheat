@@ -39,6 +39,7 @@
 
 <script>
 import L from 'leaflet'
+import calgaryParcel from '../parcel'
 
 const cartoLight = L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
     maxZoom: 20,
@@ -74,7 +75,7 @@ export default {
             parcelLayer: null,
             geojsonFeature: null,
             liteBaseMap: true,
-            baseMapUrl: '/assets/earth.png'
+            baseMapUrl: 'src/assets/earth.png'
         }
     },
     mounted() {
@@ -139,12 +140,12 @@ export default {
                 this.map.removeLayer(cartoLight)
                 this.map.addLayer(hereHybrid)
                 this.liteBaseMap = false
-                this.baseMapUrl = '/assets/street.png'
+                this.baseMapUrl = 'src/assets/street.png'
             } else {
                 this.map.removeLayer(hereHybrid)
                 this.map.addLayer(cartoLight)
                 this.liteBaseMap = true
-                this.baseMapUrl = '/assets/earth.png'
+                this.baseMapUrl = 'src/assets/earth.png'
             }
             var mapCenter = this.map.getBounds()
             var southWest = mapCenter._southWest
